@@ -1,18 +1,31 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+<template >
+    <div>
+        <h1> This is HOme page</h1>
+        <Button @click="showMsg()"> 按钮  {{ text }}</Button>
+     </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import {  reactive, ref, onMounted } from "@vue/composition-api";
 
 export default {
   name: "Home",
-  components: {
-    HelloWorld
+  setup( props, { root } ) {
+    // DOM挂载完成后
+    onMounted( () => {
+    })
+
+    const text = ref("Reactive TEXT");
+
+    const showMsg = () => {
+      console.log("-----");
+ 	  //console.log(root.$db.read().get('posts').value());
+    };
+
+    return {
+        showMsg,
+        text
+    };
   }
 };
 </script>
