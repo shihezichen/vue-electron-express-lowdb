@@ -451,7 +451,7 @@
 - 增加 express 支持
 
   ```shell
-npm install -S express
+  npm install -S express
   npm install -D nodemon
   ```
   
@@ -501,6 +501,10 @@ import Datastore from "lowdb";
   export { db as default };
   ```
   
+  其他lowdb的详细信息可以参考 LowDB.md文件, 以及网址: https://www.jianshu.com/p/d46abfa4ddc9
+  
+  
+  
 - Express  Web Restful API 服务器:
 
   注: 如果是全新项目, 则可以借助如下命令来快速生成应用的骨架, 但这个项目已经存在, 因此只能手工方式把express的 WebServer, routes, 路由响应函数 等添加到项目中:
@@ -508,8 +512,6 @@ import Datastore from "lowdb";
   ```shell
   npx express-generator
   ```
-
-  
 
 - Web Server 服务器
 
