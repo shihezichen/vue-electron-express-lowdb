@@ -11,7 +11,7 @@
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
   },
-  "main": "background_simple.js",
+  "main": "background.js",
   "dependencies": {
     "@vue/composition-api": "^0.3.4",
     "axios": "^0.19.2",
@@ -23,6 +23,7 @@
     "morgan": "^1.10.0",
     "normalize.css": "^8.0.1",
     "vue": "^2.6.11",
+    "vue-i18n": "^8.16.0",
     "vue-router": "^3.1.5",
     "vuex": "^3.1.2"
   },

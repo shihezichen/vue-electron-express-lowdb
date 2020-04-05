@@ -262,9 +262,59 @@
   </template>
   ```
 
-- 
-
 - 添加vue对i18n的支持
+
+  - 执行命令行安装包
+
+  ```shell
+  npm install -S vue-i18n
+  ```
+
+  - 准备语言文件
+    - 建立 src/i18n/en.js 和 src/i18n/zh.js
+
+    - zh.js文件内容如下,en.js和zh.js一一对应,  但value不同
+
+      ```javascript
+      export const lang = {
+          slice: {
+              placeholder: {
+                  name: "请输出切片名称",
+                  nst: "请选择NST模板"
+              },
+              tips: {
+              	sla: "带宽:{0} Mbps, 时延: {1} ms"
+          	}
+          }
+      }
+      ```
+
+  - 把i18n加入到Vue, 修改 src/main.js:
+
+    ```javascript
+    import VueI18n from 'vue-i18n';
+    
+    ...
+    Vue.use(VueI18n);
+    const i18n = new VueI18n({
+        locale: 'zh',
+        messages: {
+            'zh': require('./i18n/zh.js'),
+            'en': require('./i18n/en.js')
+        }
+    });
+    ...
+    new Vue({
+      router,
+      store,
+      i18n,  
+      render: h => h(App)
+    }).$mount("#app");
+    ```
+
+  - 在Vue文件中, 在template渲染部分可以使用 {{  \$('lang.slice.tips.sla') }} 来引用; 如果是在script部分使用, 则应使用 root.​\$t() 函数来访问;
+
+  - 使用 root.$i18n.locale 来获知当前语言
 
 - 添加路由和路由动画
 
