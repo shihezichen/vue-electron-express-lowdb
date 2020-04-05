@@ -264,11 +264,11 @@
 
 - 
 
-- 添加vue对i18n的支持 ( 待完善 )
+- 添加vue对i18n的支持
 
-- 添加路由和路由动画 ( 待完善 )
+- 添加路由和路由动画
 
-- 添加Vuex支持 ( 待完善 )
+- 添加Vuex支持
 
   
 
@@ -420,8 +420,6 @@
 
   此时出现的界面和之前用web浏览器打开的一样, 只是被装在窗口中.
 
-
-
 ### 后端部分(Express)
 
 - 后端目录准备:
@@ -442,7 +440,7 @@
          be_nodeSrv.js    express 服务器 
   ```
 
-- 增加 lowdb 支持
+- 增加 lowdb 支持 
 
   ```shell
   npm install -S lowdb
@@ -454,7 +452,7 @@
 
   ```shell
 npm install -S express
-  npm install -D nodemon-
+  npm install -D nodemon
   ```
   
 - src/backend/store/db.js:  提供数据对象访问能力
