@@ -458,12 +458,12 @@
 - src/backend/store/db.js:  提供数据对象访问能力
 
   ```javascript
-import Datastore from "lowdb";
+  import Datastore from "lowdb";
   import FileSync from "lowdb/adapters/FileSync";
   import path from "path";
   import fs from "fs-extra";
   import LodashId from "lodash-id";
-// 引入remote模块
+  // 引入remote模块
   import { app, remote } from "electron";
 
   // 根据process.type来分辨在哪种模式使用哪种模块,
@@ -478,7 +478,7 @@ import Datastore from "lowdb";
     }
   }
   
-  const adapter = new FileSync(path.join(STORE_PATH, "database.json")); // 初始化lowdb读写的json文件名以及存储路径
+  const adapter = new FileSync(path.join(STORE_PATH, "database.json"));   // 初始化lowdb读写的json文件名以及存储路径
   const db = Datastore(adapter); // lowdb接管该文件
   //通过lodash-id这个插件可以很方便地为每个新增的数据自动加上一个唯一标识的id字段
   db._.mixin(LodashId);
@@ -486,7 +486,7 @@ import Datastore from "lowdb";
   // 初始化 ( 示例 )
   if ( !db.read().has("NSTs").value()) {
     db.set("NSTs", []).write();
-    db.get("NSTs").insert({ label: "差动保护", value: "nst_001" }).write();
+    db.get("NSTs").insert({ label: "差动保护", value: "nst_001"}).write();
     db.get("NSTs").insert({ label: "龙门吊", value: "nst_002" }).write();
   }
   
