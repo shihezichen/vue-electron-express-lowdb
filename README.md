@@ -24,6 +24,20 @@
   安装完毕查看版本号:
   node -v
   ```
+- 设置npm代理
+  - (推荐) 使用淘宝镜像:
+  ```shell
+  npm config set proxy http://"username:pass"@server:port
+  npm config set http-proxy http://"username:pass"@server:port
+  npm config set https-proxy http://"username:pass"@server:port
+  npm config set strict-ssl false
+  npm config set registry=https://registry.npm.taobao.org
+  ```
+
+  - 共享信息:
+  - 华为开源镜像仓:  http://mirrors.tools.huawei.com/
+  - 华为工具云:  http://toolcloud.huawei.com/
+
 
 - 安装 vue-cli3:
 
