@@ -34,10 +34,6 @@
   npm config set registry=https://registry.npm.taobao.org
   ```
 
-  - 共享信息:
-  - 华为开源镜像仓:  http://mirrors.tools.huawei.com/
-  - 华为工具云:  http://toolcloud.huawei.com/
-
 
 - 安装 vue-cli3:
 
